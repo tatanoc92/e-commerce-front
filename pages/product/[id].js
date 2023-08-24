@@ -63,13 +63,13 @@ export default function ProductPage({ product }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  await mongooseConnect();
-  const { id } = context.query;
-  const product = await Product.findById(id);
-  return {
-    props: {
-      product: JSON.parse(JSON.stringify(product)),
-    },
-  };
-}
+// export async function getServerSideProps(context) {
+//   await mongooseConnect();
+//   const { id } = context.query;
+//   const product = await Product.findById(id);
+//   return {
+//     props: {
+//       product: JSON.parse(JSON.stringify(product)),
+//     },
+//   };
+// }
